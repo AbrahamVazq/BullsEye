@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         
         let alerta = UIAlertController(title: "Hola Mundo", message: "Este es un mensaje", preferredStyle: .Alert)
         
-        let accion = UIAlertAction(title: "Titulo del boton", style: .Default, handler: nil)
+        let accion = UIAlertAction(title: "Titulo del botonasd", style: .Default, handler: nil)
         
         
         alerta.addAction(accion)
