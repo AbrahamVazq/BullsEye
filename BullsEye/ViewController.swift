@@ -8,30 +8,46 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
+class ViewController: UIViewController
+{
+    /* Variables */
+    var valorSlider: Int = 50;
+    
+    @IBOutlet weak var slider: UISlider!
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        valorSlider = lroundf(slider.value)
     }
-
-    override func didReceiveMemoryWarning() {
+    /***************************************************************************************/
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    /***************************************************************************************/
+    /* Accion del boton inicial */
     @IBAction func ShowAlert()
     {
+        let mensajeConElValor:String = "El valor que obtuviste es: \(valorSlider)"
         
-        let alerta = UIAlertController(title: "Hola Mundo", message: "Este es un mensaje", preferredStyle: .Alert)
+        let alertaBotonInicial = UIAlertController(title: "Hola Mundo", message: mensajeConElValor, preferredStyle: .Alert)
         
-        let accion = UIAlertAction(title: "Titulo del botonasd", style: .Default, handler: nil)
+        let accionBotonInicial = UIAlertAction(title: "Ok", style: .Default, handler: nil)
         
+        alertaBotonInicial.addAction(accionBotonInicial)
         
-        alerta.addAction(accion)
-        
-        presentViewController(alerta, animated:true, completion: nil)
-        
+        presentViewController(alertaBotonInicial, animated:true, completion: nil)
     }
+    /***************************************************************************************/
+    /* Accion del Slider */
+    @IBAction func sliderMoved(slider: UISlider)
+    {
+        valorSlider = lroundf(slider.value)
+        print("El valor del slider is: \(valorSlider)")
+    }
+    /***************************************************************************************/
 }
 
