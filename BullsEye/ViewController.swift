@@ -1,4 +1,4 @@
-//
+    //
 //  ViewController.swift
 //  BullsEye
 //
@@ -11,15 +11,21 @@ import UIKit
 class ViewController: UIViewController
 {
     /* Variables */
-    var valorSlider: Int = 50;
-    
+    var valorSlider: Int = 50
+    var valorObjetivo: Int = 0
+    /*
+        La siguiente linea le dice al Constructor de interfaz
+        que en algun lugar tengo una variable "slider" de tipo UISlider
+    */
     @IBOutlet weak var slider: UISlider!
-    
+    /***************************************************************************************/
+    /***************************************************************************************/
+    /***************************************************************************************/
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        valorSlider = lroundf(slider.value)
+        iniciaNuevoRound()
     }
     /***************************************************************************************/
     override func didReceiveMemoryWarning()
@@ -31,7 +37,8 @@ class ViewController: UIViewController
     /* Accion del boton inicial */
     @IBAction func ShowAlert()
     {
-        let mensajeConElValor:String = "El valor que obtuviste es: \(valorSlider)"
+        let mensajeConElValor:String = "El valor del Slider es: \(valorSlider)"
+                                    + "\nEl valor objetivo es: \(valorObjetivo)"
         
         let alertaBotonInicial = UIAlertController(title: "Hola Mundo", message: mensajeConElValor, preferredStyle: .Alert)
         
@@ -40,6 +47,8 @@ class ViewController: UIViewController
         alertaBotonInicial.addAction(accionBotonInicial)
         
         presentViewController(alertaBotonInicial, animated:true, completion: nil)
+        
+        iniciaNuevoRound()
     }
     /***************************************************************************************/
     /* Accion del Slider */
@@ -47,6 +56,14 @@ class ViewController: UIViewController
     {
         valorSlider = lroundf(slider.value)
         print("El valor del slider is: \(valorSlider)")
+    }
+    /***************************************************************************************/
+    /* Funcion que genera un nuevo Round */
+    func iniciaNuevoRound()
+    {
+        valorObjetivo = 1 + Int(arc4random_uniform(100))
+        valorSlider = 50
+        slider.value = Float(valorSlider)
     }
     /***************************************************************************************/
 }
