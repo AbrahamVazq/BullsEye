@@ -18,14 +18,23 @@ class ViewController: UIViewController
         que en algun lugar tengo una variable "slider" de tipo UISlider
     */
     @IBOutlet weak var slider: UISlider!
+    /*
+        La siguiente linea añade el valor generado aleatoriamente a un
+        Label
+     */
+    @IBOutlet weak var valorObjetivoLabel: UILabel!
+    
     /***************************************************************************************/
     /***************************************************************************************/
     /***************************************************************************************/
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // llama a la funcion nuevo Round el cual inicializa los valores del slider y genera otro aleatorio
         iniciaNuevoRound()
+        // llama a la funcion que escribira valores en los Label
+        actualizaLabel()
+        
     }
     /***************************************************************************************/
     override func didReceiveMemoryWarning()
@@ -49,6 +58,7 @@ class ViewController: UIViewController
         presentViewController(alertaBotonInicial, animated:true, completion: nil)
         
         iniciaNuevoRound()
+        actualizaLabel()
     }
     /***************************************************************************************/
     /* Accion del Slider */
@@ -66,5 +76,12 @@ class ViewController: UIViewController
         slider.value = Float(valorSlider)
     }
     /***************************************************************************************/
+    /* Funcion que actualiza los Labels en la app */
+    func actualizaLabel()
+    {
+        valorObjetivoLabel.text = String(valorObjetivo)
+    }
+    /***************************************************************************************/
+
 }
 
