@@ -46,10 +46,27 @@ class ViewController: UIViewController
     /* Accion del boton inicial */
     @IBAction func ShowAlert()
     {
+        var diferenciaDeValores: Int
+        
+        if valorSlider > valorObjetivo
+        {
+            diferenciaDeValores = valorSlider - valorObjetivo
+        }
+        else if valorObjetivo > valorSlider
+        {
+            diferenciaDeValores = valorObjetivo - valorSlider
+        }
+        else
+        {
+            diferenciaDeValores = 0
+        }
+        
         let mensajeConElValor:String = "El valor del Slider es: \(valorSlider)"
                                     + "\nEl valor objetivo es: \(valorObjetivo)"
+                                    + "\nLa diferencia es: \(diferenciaDeValores)"
         
-        let alertaBotonInicial = UIAlertController(title: "Hola Mundo", message: mensajeConElValor, preferredStyle: .Alert)
+        
+        let alertaBotonInicial = UIAlertController(title: "Resultados", message: mensajeConElValor, preferredStyle: .Alert)
         
         let accionBotonInicial = UIAlertAction(title: "Ok", style: .Default, handler: nil)
         
@@ -82,6 +99,6 @@ class ViewController: UIViewController
         valorObjetivoLabel.text = String(valorObjetivo)
     }
     /***************************************************************************************/
-
+    
 }
 
