@@ -14,6 +14,7 @@ class ViewController: UIViewController
     var valorSlider: Int = 50
     var valorObjetivo: Int = 0
     var puntuacion: Int = 0
+    var round: Int = 0
     /*
         La siguiente linea le dice al Constructor de interfaz
         que en algun lugar tengo una variable "slider" de tipo UISlider
@@ -28,6 +29,10 @@ class ViewController: UIViewController
         La siguiente linea añade el valor de puntuacion al label Puntuacion
      */
     @IBOutlet weak var puntuacionLable: UILabel!
+    /*
+        La siguiente linea añade el valor del round actual en Label round
+     */
+    @IBOutlet weak var roundLabel: UILabel!
     
     /***************************************************************************************/
     /***************************************************************************************/
@@ -57,6 +62,7 @@ class ViewController: UIViewController
         let puntos = 100 - diferenciaDeValores
         
         puntuacion += puntos
+        
         
         /*let mensajeConElValor:String = "El valor del Slider es: \(valorSlider)"
                                     + "\nEl valor objetivo es: \(valorObjetivo)"
@@ -88,6 +94,7 @@ class ViewController: UIViewController
     /* Funcion que genera un nuevo Round */
     func iniciaNuevoRound()
     {
+        round += 1
         valorObjetivo = 1 + Int(arc4random_uniform(100))
         valorSlider = 50
         slider.value = Float(valorSlider)
@@ -98,6 +105,7 @@ class ViewController: UIViewController
     {
         valorObjetivoLabel.text = String(valorObjetivo)
         puntuacionLable.text = String(puntuacion)
+        roundLabel.text = String(round)
     }
     /***************************************************************************************/
     
