@@ -13,6 +13,7 @@ class ViewController: UIViewController
     /* Variables */
     var valorSlider: Int = 50
     var valorObjetivo: Int = 0
+    var puntuacion: Int = 0
     /*
         La siguiente linea le dice al Constructor de interfaz
         que en algun lugar tengo una variable "slider" de tipo UISlider
@@ -20,9 +21,13 @@ class ViewController: UIViewController
     @IBOutlet weak var slider: UISlider!
     /*
         La siguiente linea añade el valor generado aleatoriamente a un
-        Label
+        Label del valor objetivo
      */
     @IBOutlet weak var valorObjetivoLabel: UILabel!
+    /* 
+        La siguiente linea añade el valor de puntuacion al label Puntuacion
+     */
+    @IBOutlet weak var puntuacionLable: UILabel!
     
     /***************************************************************************************/
     /***************************************************************************************/
@@ -46,11 +51,19 @@ class ViewController: UIViewController
     /* Accion del boton inicial */
     @IBAction func ShowAlert()
     {
+        // Funcion abs() obtiene un valor positivo siempre (Absoluto)
         let diferenciaDeValores = abs(valorSlider - valorObjetivo)
         
-        let mensajeConElValor:String = "El valor del Slider es: \(valorSlider)"
+        let puntos = 100 - diferenciaDeValores
+        
+        puntuacion += puntos
+        
+        /*let mensajeConElValor:String = "El valor del Slider es: \(valorSlider)"
                                     + "\nEl valor objetivo es: \(valorObjetivo)"
-                                    + "\nLa diferencia es: \(diferenciaDeValores)"
+                                    + "\nLa diferencia es: \(diferenciaDeValores)" */
+        
+        let mensajeConElValor:String = "\n Mientras mayor sea tu puntiación mejor te has acercado\n"
+                                        + "Tu Puntuaciones : \(puntos) puntos."
         
         
         let alertaBotonInicial = UIAlertController(title: "Resultados", message: mensajeConElValor, preferredStyle: .Alert)
@@ -84,6 +97,7 @@ class ViewController: UIViewController
     func actualizaLabel()
     {
         valorObjetivoLabel.text = String(valorObjetivo)
+        puntuacionLable.text = String(puntuacion)
     }
     /***************************************************************************************/
     
