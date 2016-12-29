@@ -46,13 +46,7 @@ class ViewController: UIViewController
     /* Accion del boton inicial */
     @IBAction func ShowAlert()
     {
-        var diferenciaDeValores = valorSlider - valorObjetivo
-        
-        if diferenciaDeValores < 0
-        {
-            diferenciaDeValores = diferenciaDeValores * -1
-        }
-        
+        let diferenciaDeValores = abs(valorSlider - valorObjetivo)
         
         let mensajeConElValor:String = "El valor del Slider es: \(valorSlider)"
                                     + "\nEl valor objetivo es: \(valorObjetivo)"
