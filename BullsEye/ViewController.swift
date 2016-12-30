@@ -58,10 +58,11 @@ class ViewController: UIViewController
     {
         // Funcion abs() obtiene un valor positivo siempre (Absoluto)
         let diferenciaDeValores = abs(valorSlider - valorObjetivo)
-        
+        // Linea que obtiene el valor de la puntuacion final y la asigna a la variable
         var puntos = 100 - diferenciaDeValores
         puntuacion += puntos
         
+        // Inicio del If para los mensajes personalizados y el bonus.
         let mensajeResultado: String
         
         if diferenciaDeValores == 0
@@ -95,14 +96,15 @@ class ViewController: UIViewController
         
         let alertaBotonInicial = UIAlertController(title: "\(mensajeResultado)", message: mensajeConElValor, preferredStyle: .Alert)
         
-        let accionBotonInicial = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+        let accionBotonInicial = UIAlertAction(title: "Ok", style: .Default, handler:
+                                                               { action in
+                                                                   self.iniciaNuevoRound()
+                                                                   self.actualizaLabel()
+                                                                })
         
         alertaBotonInicial.addAction(accionBotonInicial)
         
         presentViewController(alertaBotonInicial, animated:true, completion: nil)
-        
-        iniciaNuevoRound()
-        actualizaLabel()
     }
     /***************************************************************************************/
     /* Accion del Slider */
