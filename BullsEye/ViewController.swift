@@ -1,4 +1,4 @@
-    //
+//
 //  ViewController.swift
 //  BullsEye
 //
@@ -59,20 +59,41 @@ class ViewController: UIViewController
         // Funcion abs() obtiene un valor positivo siempre (Absoluto)
         let diferenciaDeValores = abs(valorSlider - valorObjetivo)
         
-        let puntos = 100 - diferenciaDeValores
-        
+        var puntos = 100 - diferenciaDeValores
         puntuacion += puntos
         
+        let mensajeResultado: String
+        
+        if diferenciaDeValores == 0
+        {
+            mensajeResultado = "Perfecto!!!"
+            puntos += 100
+        }
+        else if diferenciaDeValores < 5
+        {
+            mensajeResultado = "Muy cerca!"
+            if diferenciaDeValores == 1
+            {
+                puntos += 50
+            }
+        }
+        else if diferenciaDeValores < 10
+        {
+            mensajeResultado = "Bien hecho!"
+        }
+        else
+        {
+            mensajeResultado = "Muy frio! "
+        }
         
         /*let mensajeConElValor:String = "El valor del Slider es: \(valorSlider)"
                                     + "\nEl valor objetivo es: \(valorObjetivo)"
                                     + "\nLa diferencia es: \(diferenciaDeValores)" */
         
-        let mensajeConElValor:String = "\n Mientras mayor sea tu puntiación mejor te has acercado\n"
-                                        + "Tu Puntuaciones : \(puntos) puntos."
+        let mensajeConElValor: String = "Tu Puntuaciones : \(puntos) puntos."
         
         
-        let alertaBotonInicial = UIAlertController(title: "Resultados", message: mensajeConElValor, preferredStyle: .Alert)
+        let alertaBotonInicial = UIAlertController(title: "\(mensajeResultado)", message: mensajeConElValor, preferredStyle: .Alert)
         
         let accionBotonInicial = UIAlertAction(title: "Ok", style: .Default, handler: nil)
         
