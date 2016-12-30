@@ -41,7 +41,7 @@ class ViewController: UIViewController
     {
         super.viewDidLoad()
         // llama a la funcion nuevo Round el cual inicializa los valores del slider y genera otro aleatorio
-        iniciaNuevoRound()
+        reiniciarJuego()
         // llama a la funcion que escribira valores en los Label
         actualizaLabel()
         
@@ -131,6 +131,14 @@ class ViewController: UIViewController
         roundLabel.text = String(round)
     }
     /***************************************************************************************/
-    
+    /* Funcion que reinicia los valores del juego */
+    @IBAction func reiniciarJuego()
+    {
+        puntuacion = 0
+        round = 0
+        iniciaNuevoRound()
+        actualizaLabel()
+    }
+    /***************************************************************************************/
 }
 

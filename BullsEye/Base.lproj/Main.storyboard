@@ -36,6 +36,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1h-aM-C5S">
                                 <rect key="frame" x="303" y="257" width="140" height="30"/>
                                 <state key="normal" title="Comenzar de Nuevo"/>
+                                <connections>
+                                    <action selector="reiniciarJuego" destination="BYZ-38-t0r" eventType="touchUpInside" id="F9S-Yl-VmY"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coloca el punto lo mas cerca posible al valor: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ey8-5q-obb">
                                 <rect key="frame" x="86" y="28" width="349" height="21"/>
