@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "Puntuacion:"; ObjectID = "37P-JL-ZhL"; */
+"37P-JL-ZhL.text" = "Puntuacion:";
+
+/* Class = "UILabel"; text = "999"; ObjectID = "DtV-vv-JQY"; */
+"DtV-vv-JQY.text" = "999";
+
+/* Class = "UILabel"; text = "Ronda:"; ObjectID = "SpF-e4-47D"; */
+"SpF-e4-47D.text" = "Ronda:";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "Td0-Nh-vZ9"; */
+"Td0-Nh-vZ9.text" = "1";
+
+/* Class = "UILabel"; text = "100"; ObjectID = "Tgv-ws-j8w"; */
+"Tgv-ws-j8w.text" = "100";
+
+/* Class = "UIButton"; normalTitle = "Dispara!"; ObjectID = "ZbA-qu-L4T"; */
+"ZbA-qu-L4T.normalTitle" = "Dispara!";
+
+/* Class = "UILabel"; text = "Coloca el punto lo mas cerca posible al valor: "; ObjectID = "ey8-5q-obb"; */
+"ey8-5q-obb.text" = "Coloca el punto lo mas cerca posible al valor: ";
+
+/* Class = "UILabel"; text = "9999"; ObjectID = "gH3-ax-t7b"; */
+"gH3-ax-t7b.text" = "9999";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "tcB-jt-sUn"; */
+"tcB-jt-sUn.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Cerrar"; ObjectID = "yYQ-wK-ejA"; */
+"yYQ-wK-ejA.normalTitle" = "Cerrar";
