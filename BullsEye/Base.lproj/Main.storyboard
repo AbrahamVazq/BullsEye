@@ -162,26 +162,19 @@
                                     <action selector="cerrar" destination="d4y-Ym-OJw" eventType="touchUpInside" id="Nd2-7e-M2E"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" id="XxU-EK-5dZ">
-                                <rect key="frame" x="27" y="13" width="521" height="226"/>
+                            <webView contentMode="scaleToFill" id="oZT-qG-7s1">
+                                <rect key="frame" x="36" y="25" width="497" height="233"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">*** Bull’s Eye ***
-Este es el juego Bull's Eye, donde puedes ganar puntos y fama solamente moviendo el slider.   
-
-El Objetivo es poner en el slider en el valor que creas mas crecano al del objetivo, mientras mas cerca, mayores puntos obtendras, Diviertete!.                            
-
-Este juego fue desarrollado por Matthijs Hollemans, y solamente hice uso del codigo que el provee para aprender sobre Swift e iOS, con mis propios cambios.
-
-Visita su pagina web: www.matthijshollemans.com.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="webView" destination="oZT-qG-7s1" id="V2e-tK-QZf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OpK-jF-eEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

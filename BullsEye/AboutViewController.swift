@@ -8,22 +8,35 @@
 
 import UIKit
 
-class AboutViewController: UIViewController {
-
-    override func viewDidLoad() {
+class AboutViewController: UIViewController
+{
+    @IBOutlet weak var webView: UIWebView!
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let ArchivoHTLM = NSBundle.mainBundle().pathForResource("BullsEye", ofType: "html")
+        {
+            if let htmlData = NSData(contentsOfFile: ArchivoHTLM)
+            {
+                let baseURL = NSURL(fileURLWithPath: NSBundle.mainBundle().bundlePath)
+                webView.loadData(htmlData, MIMEType: "text/html", textEncodingName: "UTF-8", baseURL: baseURL)
+            }
+        }
     }
+    /***************************************************************************************/
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    /***************************************************************************************/
+
     @IBAction func cerrar()
     {
         dismissViewControllerAnimated(true, completion: nil)
     }
-
+    /***************************************************************************************/
 }
