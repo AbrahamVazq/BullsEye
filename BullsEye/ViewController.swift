@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class ViewController: UIViewController
 {
@@ -164,6 +165,12 @@ class ViewController: UIViewController
         round = 0
         iniciaNuevoRound()
         actualizaLabel()
+        
+        let transition = CATransition()
+        transition.type = kCATransitionFade
+        transition.duration = 5 //Duracion de la animacion
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        view.layer.addAnimation(transition, forKey: nil)
     }
     /***************************************************************************************/
 }
